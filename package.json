@@ -1,0 +1,28 @@
+{
+  "name": "spotholes",
+  "version": "1.0.0",
+  "description": "### SpotHoles is an app created to solve the pervasive issue of potholes in Atlanta, and one day the world! Inspired by the recent heroism and leadership of Wanksy we aim to provide the location of potholes throughout this New Jersian level wasteland. It is up to all of you to go forth and tag these with the most offensive things imaginable in order to force the city into action.",
+  "main": "server.js",
+  "dependencies": {
+    "concurrently": "^4.1.2",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.0",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PShivers/SpotHoles.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PShivers/SpotHoles/issues"
+  },
+  "homepage": "https://github.com/PShivers/SpotHoles#readme"
+}
