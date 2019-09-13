@@ -4,7 +4,7 @@ require('dotenv').config();
 if (process.env.MONGODB_URI) {
   mongoose.connect(process.env.MONGODB_URI);
 } else {
-  mongoose.connect('mongodb://localhost/project3');
+  mongoose.connect('mongodb://localhost/spotholes');
 }
 
 mongoose.connection.on('error', error => {

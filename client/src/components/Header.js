@@ -4,7 +4,7 @@ class Header extends Component {
     state = {  }
     render() { 
         return ( 
-        <h2 class="ui center aligned icon header">
+        <h2 class="ui center aligned icon header" style={{ backgroundColor: 'tomato'}}>
             <i class="circular map outline icon"></i>
                     SpotHoles
                     <h4>If you see something, spray something!</h4>

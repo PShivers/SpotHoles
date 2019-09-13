@@ -24,7 +24,9 @@ const PotholesController = {
   create: async (req, res) => {
     try {
       const newPothole = req.body;
+
       const savedPothole = await Potholes.create(newPothole);
+
       res.json(savedPothole);
     } catch (err) {
       console.log(err);
