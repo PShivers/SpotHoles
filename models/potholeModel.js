@@ -2,7 +2,8 @@ const mongoose = require('../db/connection')
 const Schema = mongoose.Schema;
 
 const Pothole = new Schema({
-  location: Number,
+  lat: String,
+  long: String,
   severity: String,
   isFixed: Boolean
 });

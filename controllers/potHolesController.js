@@ -24,7 +24,9 @@ const PotholesController = {
   create: async (req, res) => {
     try {
       const newPothole = req.body;
-      const savedPothole = await PotHoles.create(newPothole);
+
+      const savedPothole = await Potholes.create(newPothole);
+
       res.json(savedPothole);
     } catch (err) {
       console.log(err);
@@ -36,7 +38,7 @@ const PotholesController = {
     try {
       const potholeId = req.params.id;
       const updatedPothole = req.body;
-      const savedPothole = await Devs.findByIdAndUpdate(
+      const savedPothole = await Potholes.findByIdAndUpdate(
         potholeId,
         updatedPothole,
         {
