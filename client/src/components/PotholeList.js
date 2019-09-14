@@ -11,8 +11,8 @@ class PotholeList extends Component {
      }
 
      componentDidMount(){
-         getPotholes().then(data => {
-             console.log(data)
+         getPotholes().then(response => {
+             console.log(response)
          })
      }
     render() { 

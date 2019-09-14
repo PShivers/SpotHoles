@@ -4,12 +4,11 @@ class PotholeDetail extends Component {
     
 
     render() { 
-        console.log(this.props)
         return ( 
         
             <div className="raised card">
                 <div className="image">
-                    <img />
+                    <img alt='pothole-pic'/>
                 </div>
 
                 <div className="extra">
