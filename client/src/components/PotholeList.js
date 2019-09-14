@@ -18,8 +18,8 @@ class PotholeList extends Component {
     render() { 
         return ( 
         <div className="ui four cards">
-            {this.state.potholes.map(pothole=>{
-                return <PotholeDetail pothole={pothole} />
+            {this.state.potholes.map((pothole,index) =>{
+                return <PotholeDetail pothole={pothole} key={index}/>
                 })
             }
         </div> );
