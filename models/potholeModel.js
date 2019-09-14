@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const Pothole = new Schema({
   lat: String,
   long: String,
-  severity: String,
+  severity: Number,
   isFixed: Boolean
 });
 

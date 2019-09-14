@@ -4,22 +4,28 @@ const Potholes = require('../models/PotholeModel.js');
 Potholes.deleteMany()
   .then(() => {
     const Pothole1 = new Potholes({
-      name: 'Pothole1',
-      appsInProgress: []
+      lat: String,
+      long: String,
+      severity: Number,
+      isFixed: Boolean
     });
     return Pothole1.save();
   })
   .then(() => {
     const Pothole2 = new Potholes({
-      name: 'Pothole2',
-      appsInProgress: []
+      lat: String,
+      long: String,
+      severity: Number,
+      isFixed: Boolean
     });
     return Pothole2.save();
   })
   .then(() => {
     const Pothole3 = new Potholes({
-      name: 'Pothole3',
-      appsInProgress: []
+      lat: String,
+      long: String,
+      severity: Number,
+      isFixed: Boolean
     });
     return Pothole3.save();
   });
