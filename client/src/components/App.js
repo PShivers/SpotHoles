@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Map from './Map'
+import PotholeList from './PotholeList'
 
 class App extends Component {
     state = {  }
@@ -9,6 +10,7 @@ class App extends Component {
         <div >
             <Header />
             <Map />
+            <PotholeList />
         </div> );
     }
 }
