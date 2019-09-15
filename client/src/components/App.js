@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import Map from './Map'
+import Map from './MapBeta'
 import PotholeList from './PotholeList'
 
 class App extends Component {
