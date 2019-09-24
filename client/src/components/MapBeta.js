@@ -12,7 +12,7 @@ class MapContainer extends Component {
       },{
         position: { lat: 33.7490, lng: -84.360}
       }], 
-      newMarker: {lat: Number, lng: Number}      
+      newMarker: {name: "newMarker", lat: Number, lng: Number}      
   }
 
   showInfoWindow =()=>{
@@ -22,11 +22,9 @@ class MapContainer extends Component {
     mapClicked=(mapProps, map, clickEvent)=>{
         const latitude = clickEvent.latLng.lat();
         const longitude = clickEvent.latLng.lng();
-        const newMarker = {lat:Number,lng: Number};
+        const newMarker = {...this.state.newMarker};
         newMarker.lat = latitude;
-        newMarker.lng = longitude;
-        console.log(newMarker)
-        console.log(this.state)
+        newMarker.lng = longitude;       
         this.setState({newMarker});
         console.log(this.state.newMarker)
         // ...

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import Map from './MapBeta'
+import MapBeta from './MapBeta'
 import PotholeList from './PotholeList'
 
 class App extends Component {
@@ -9,7 +9,7 @@ class App extends Component {
         return ( 
         <div >
             <Header />
-            <Map />
+            <MapBeta />
             <PotholeList />
         </div> );
     }
