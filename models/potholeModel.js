@@ -5,7 +5,8 @@ const Pothole = new Schema({
   lat: String,
   long: String,
   severity: Number,
-  isFixed: Boolean
+  isFixed: Boolean,
+  position: { lat: Number, lng: Number }
 });
 
 module.exports = mongoose.model('Pothole', Pothole);

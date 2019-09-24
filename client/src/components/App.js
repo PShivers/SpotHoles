@@ -11,7 +11,7 @@ class App extends Component {
     componentDidMount(){
         getPotholes().then(response => {
             let potholes = response.data;
-            this.setState({potholes})
+            this.setState({potholes});
         })
     }
 
@@ -19,7 +19,7 @@ class App extends Component {
         return ( 
         <div >
             <Header />
-            <MapBeta />
+            <MapBeta potholes={this.state.potholes} />
             <PotholeList potholes={this.state.potholes}/>
         </div> );
     }

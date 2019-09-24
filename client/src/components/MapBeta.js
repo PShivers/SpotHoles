@@ -5,13 +5,6 @@ const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 class MapContainer extends Component {
     state = { 
-      markers:[{
-        position: { lat: 33.7490, lng: -84.380}
-      },{
-        position: { lat: 33.7490, lng: -84.4}
-      },{
-        position: { lat: 33.7490, lng: -84.360}
-      }], 
       newMarker: {name: "newMarker", lat: Number, lng: Number}      
   }
 
@@ -31,6 +24,7 @@ class MapContainer extends Component {
       }
 
     render() { 
+      console.log(this.props)
         return ( <div className="ui placeholder segment">
         <Map
             onClick={this.mapClicked}   
@@ -41,9 +35,11 @@ class MapContainer extends Component {
         <Marker onClick={this.onMarkerClick}
                 name={'Current location'} />
         <Marker position={{ lat: 33.7490, lng: -84.380}} />
-        {this.state.markers.map((marker, index)=>{
-          return <Marker key={index} position = {marker.position} />
+
+        {this.props.potholes.map((pothole)=>{
+          return <Marker key={pothole.id} position = {pothole.position} />
         })}
+
         <Marker 
           position={{lat:this.state.newMarker.lat, lng:this.state.newMarker.lng }}
           draggable={true}

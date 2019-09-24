@@ -7,7 +7,8 @@ Potholes.deleteMany()
       lat: '34.25W',
       long: '45.89N',
       severity: 2,
-      isFixed: false
+      isFixed: false,
+      position: { lat: 33.749, lng: -84.36 }
     });
     return Pothole1.save();
   })
@@ -16,7 +17,8 @@ Potholes.deleteMany()
       lat: '68.69W',
       long: '78.34S',
       severity: 3,
-      isFixed: false
+      isFixed: false,
+      position: { lat: 33.749, lng: -84.4 }
     });
     return Pothole2.save();
   })
@@ -25,7 +27,8 @@ Potholes.deleteMany()
       lat: '79.33E',
       long: '89.22N',
       severity: 5,
-      isFixed: false
+      isFixed: false,
+      position: { lat: 33.749, lng: -84.38 }
     });
     return Pothole3.save();
   });
