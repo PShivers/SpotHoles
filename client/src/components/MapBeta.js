@@ -12,8 +12,11 @@ class MapContainer extends Component {
       },{
         position: { lat: 33.7490, lng: -84.360}
       }], 
-      newMarker: {lat: Number, lng: Number},
-      
+      newMarker: {lat: Number, lng: Number}      
+  }
+
+  showInfoWindow =()=>{
+    console.log('marker clicked')
   }
 
     mapClicked=(mapProps, map, clickEvent)=>{
@@ -43,6 +46,11 @@ class MapContainer extends Component {
         {this.state.markers.map((marker, index)=>{
           return <Marker key={index} position = {marker.position} />
         })}
+        <Marker 
+          position={this.state.newMarker}
+          draggable={true}
+          onClick={this.showInfoWindow}
+        />
         </Map>
       </div> );
     }
