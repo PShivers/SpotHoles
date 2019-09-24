@@ -10,10 +10,10 @@ class PotholeList extends Component {
      componentDidMount(){
          getPotholes().then(response => {
              let potholes = response.data;
-             console.log(potholes)
              this.setState({potholes})
          })
      }
+     
     render() { 
         return ( 
         <div className="ui four cards">
