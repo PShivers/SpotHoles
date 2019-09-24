@@ -45,7 +45,7 @@ class MapContainer extends Component {
           return <Marker key={index} position = {marker.position} />
         })}
         <Marker 
-          position={this.state.newMarker}
+          position={{lat:this.state.newMarker.lat, lng:this.state.newMarker.lng }}
           draggable={true}
           onClick={this.showInfoWindow}
         />
