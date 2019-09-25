@@ -5,6 +5,7 @@ const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 class MapContainer extends Component {
   state = { 
+    showingInputInfoWindow: false,
     showingInfoWindow: false,
     activeMarker: {},
     selectedMarker: {},
@@ -21,53 +22,66 @@ class MapContainer extends Component {
     })
   };
 
-  mapClicked=(mapProps, map, clickEvent)=>{
-    console.log(this.state)
+  onNewMarkerClick=()=>{
+    console.log(this.state.newMarker)
+  }
+  mapClicked = (mapProps, map, clickEvent) => {
     if (this.state.showingInfoWindow) {
       this.setState({
         showingInfoWindow: false,
         activeMarker: null
       })
-    }else{
+    } else {
       const latitude = clickEvent.latLng.lat();
       const longitude = clickEvent.latLng.lng();
       const newMarker = {...this.state.newMarker};
       newMarker.lat = latitude;
-      newMarker.lng = longitude;       
-      this.setState({newMarker});
+      newMarker.lng = longitude; 
+      this.setState({
+        newMarker: newMarker,
+        activeMarker: newMarker, 
+      });
+      console.log(this.state)
+      
     }
   }
 
   render() { 
       return ( <div className="ui placeholder segment">
-      <Map
-          onClick={this.mapClicked}
-          google={this.props.google}
-          zoom={9.5}
-          initialCenter={{ lat: 33.7490, lng: -84.3880}}
-      >
-        <Marker onClick={this.onMarkerClick}
-                name={'Current location'} />
-        <Marker position={{ lat: 33.7490, lng: -84.380}} />
+        <Map
+            onClick={this.mapClicked}
+            google={this.props.google}
+            zoom={9.5}
+            initialCenter={{ lat: 33.7490, lng: -84.3880}}
+        >
 
-        {this.props.potholes.map((pothole)=>{
-          return <Marker key={pothole.id} position = {pothole.position} />
-        })}
+          {this.props.potholes.map((pothole)=>{
+            return <Marker name = {pothole.id}key={pothole.id} position = {pothole.position} onClick={this.onMarkerClick} />
+          })}
 
-        <Marker 
-          position={{lat:this.state.newMarker.lat, lng:this.state.newMarker.lng }}
-          draggable={true}
-          onClick={this.onMarkerClick}
-        />
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}>
-            <div>
-              <h1>{this.state.selectedPlace.name}</h1>
-            </div>
-        </InfoWindow>
-      </Map>
-    </div> );
+          <Marker 
+            position={{lat:this.state.newMarker.lat, lng:this.state.newMarker.lng }}
+            onClick={this.onNewMarkerClick}
+          />
+
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}>
+              <div>
+                <h1>{this.state.selectedPlace.name}</h1>
+              </div>
+          </InfoWindow>
+
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInputInfoWindow}>
+              <div>
+                <h1>bla</h1>
+              </div>
+          </InfoWindow>
+
+        </Map>
+      </div> );
   }
 }
  

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PotholeDetail from './PotholeDetail';
-import { getPotholes } from '../util';
 
 class PotholeList extends Component {
      
